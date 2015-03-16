@@ -1,0 +1,39 @@
+<!--<% provide(:title, 'Sign up') %>
+<h1>Sign up</h1>
+<div class="row">
+<div class="span6 offset3">
+<form accept-charset="UTF-8" action="/users" class="new_user"
+id="new_user" method="post">
+<label for="user_name">username</label>
+<input id="user_name" name="user[username]" size="30" type="text" />
+<label for="user_email">Email</label>
+<input id="user_email" name="user[email]" size="30" type="text" />
+<label for="user_password">Password</label>
+<input id="user_password" name="user[password]" size="30"
+type="password" />
+<label for="user_password_confirmation">Confirmation</label>
+<input id="user_password_confirmation"
+name="user[password_confirmation]" size="30" type="password" />
+<input class="btn btn-large btn-primary" name="commit" type="submit"
+value="Create my account" />
+</form>
+</div>
+</div>-->
+
+<% provide(:title, 'Sign up') %>
+<h1>Sign up</h1>
+<div class="row">
+<div class="span6 offset3">
+<%= form_for(@user) do |f| %>
+<%= f.label :name %>
+<%= f.text_field :username %>
+<%= f.label :email %>
+<%= f.text_field :email %>
+<%= f.label :password %>
+<%= f.password_field :password %>
+<%= f.label :password_confirmation, "Confirmation" %>
+<%= f.password_field :password_confirmation %>
+<%= f.submit "Create my account", class: "btn btn-large btn-primary" %>
+<% end %>
+</div>
+</div>
